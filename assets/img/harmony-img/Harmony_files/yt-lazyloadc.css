@@ -1,0 +1,113 @@
+/*!
+ * Youtube LazyLoad 
+ * v4.0.1
+ * https://github.com/the-muda-organization/youtube-lazyload
+ * MIT License
+ */
+
+
+/* youtube lazyload container */
+.yt-lazyload{
+    width:100%;
+    position:relative!important;
+    overflow:hidden;
+    cursor:pointer;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+/* youtube lazyload container ::before --> to maintain 16/9 ratio & black bg before JS loaded */
+.yt-lazyload::before{
+    content:'';
+    width:100%;
+    display:block;
+    position:relative;
+    padding-top:56.25%; /*16:9 ratio*/
+    background-color:#000;
+}
+
+/* youtube lazyload wrap */
+.yt-lazyload-wrap{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    padding:inherit;
+}
+
+/* youtube lazyload content */
+.yt-lazyload-content{
+    width:100%;
+    height:100%;
+    position:relative;
+    background-color:#000;
+    background-image:url("../img/video_thum.jpg");
+    background-size:cover;
+    background-position:50%;
+    background-repeat:no-repeat;
+}
+
+/* play-btn */
+.yt-lazyload-playbtn{
+    display:block;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:1;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 68 48'%3E%3Cpath fill='%23212121' fill-opacity='.8' d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z'/%3E%3Cpath fill='%23fff' d='m45 24-18-10v20'/%3E%3C/svg%3E");
+    background-position:50%;
+    background-size:50px;
+    background-repeat:no-repeat;
+}
+
+/* play-btn:hover */
+.yt-lazyload-playbtn:hover{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 68 48'%3E%3Cpath fill='red' d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z'/%3E%3Cpath fill='%23fff' d='m45 24-18-10v20'/%3E%3C/svg%3E");
+}
+
+/* logo */
+.yt-lazyload-logo{
+    display:block;
+    width:30%;
+    min-width:95px;
+    min-height:22px;
+    max-width:215px;
+    padding-top:6.8%;   /* 22.3577236% (logo height/width in %) * 0.3 (equivalent to width:30%) = 6.70731708% rounded up */
+    position:absolute;
+    right:4%;
+    bottom:4%;
+    z-index:2;
+    background-position:50%;
+    background-size:contain;
+    background-repeat:no-repeat;
+    opacity:.75;
+    transition:opacity .3s;
+}
+
+
+/* 0 = no logo!    */
+/* 1 = black       */.yt-lazyload[data-logo="1"] .yt-lazyload-logo{background-image:url("data:https://shantaholdings.com/themes/real_estate/assets/img/images/BG-whyus-4.2.jpg")}
+/* 2 = color-black */.yt-lazyload[data-logo="2"] .yt-lazyload-logo{background-image:url("data:https://shantaholdings.com/themes/real_estate/assets/img/images/BG-whyus-4.2.jpg")}
+/* 3 = white       */.yt-lazyload[data-logo="3"] .yt-lazyload-logo{background-image:url("data:https://shantaholdings.com/themes/real_estate/assets/img/images/BG-whyus-4.2.jpg")}
+/* 4 = color-white */.yt-lazyload[data-logo="4"] .yt-lazyload-logo{background-image:url("data:https://shantaholdings.com/themes/real_estate/assets/img/images/BG-whyus-4.2.jpg")}
+
+/* logo:hover */
+.yt-lazyload-logo:hover{
+    opacity:1;
+    transition:opacity .3s;
+}
+
+/* iframe */
+.yt-lazyload iframe{
+    width:100%!important;
+    height:100%!important;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:3;
+    border:0;
+}

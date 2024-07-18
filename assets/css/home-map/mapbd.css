@@ -1,0 +1,384 @@
+.inner-addon {
+    position: relative;
+}
+
+#map .gm-fullscreen-control {
+    background: none rgb(169 161 35) !important;
+}
+
+#map .gm-fullscreen-control > img:nth-child(1) {
+    filter: brightness(3.5) !important;
+    -webkit-filter: brightness(3.5) !important;
+    -moz-filter: brightness(3.5) !important;
+}
+
+#map .gm-fullscreen-control {
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -o-transform-origin: center center;
+    transition: all 4s;
+
+    -webkit-animation-delay:2s;
+    -moz-animation-delay:2s;
+    -ms-animation-delay:2s;
+    -o-animation-delay:2s;
+    animation-dely:2s;
+
+    -webkit-animation: 3600ms pulsate infinite alternate ease-in-out;
+    -moz-animation: 3600ms pulsate infinite alternate ease-in-out;
+    -ms-animation: 3600ms pulsate infinite alternate ease-in-out;
+    -o-animation: 3600ms pulsate infinite alternate ease-in-out;
+    animation: 3600ms pulsate infinite alternate ease-in-out;
+}
+
+@keyframes pulsate {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1); }
+    100% { transform: scale(0.7); }
+}
+@-webkit-keyframes pulsate {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1); }
+    100% { transform: scale(0.7); }
+}
+@-moz-keyframes pulsate {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1); }
+    100% { transform: scale(0.7); }
+}
+@-ms-keyframes pulsate {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1); }
+    100% { transform: scale(0.7); }
+}
+@-o-keyframes pulsate {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1); }
+    100% { transform: scale(0.7); }
+}
+
+#map .gm-bundled-control-on-bottom > div:nth-child(2) > div {
+    margin-top: -230px;
+    background-color: rgb(169 161 35) !important;
+}
+
+#map .gm-bundled-control-on-bottom > div:nth-child(2) > div > button > img:nth-child(1) {
+    filter: brightness(3.5) !important;
+    -webkit-filter: brightness(3.5) !important;
+    -moz-filter: brightness(3.5) !important;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    padding-top: 15px;
+    padding-right: 20px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+
+/*the container must be positioned relative:*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 25px;
+    right: 0;
+    width: 92%;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 320px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+/*Left*/
+.modal.left.fade .modal-dialog {
+    left: -320px;
+    -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+    transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog {
+    left: 0;
+}
+
+#myModal .modal-header {
+    background-color: #717171;
+}
+
+/* Image Gallary */
+.modal.bottom .modal-dialog,
+.modal.top .modal-dialog {
+    position: fixed;
+    bottom: -31px;
+    overflow: hidden;
+    left: 320px;
+    width: 100%;
+    height: 36%;
+}
+
+#gallaryModal .owl-carousel img {
+    width: 200px;
+    height: 160px;
+    transition: 1s;
+    margin-left: 15px;
+}
+
+#gallaryModal .owl-carousel img:hover {
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+#gallaryModal .owl-carousel .owl-item {
+    width: 210px !important;
+}
+
+#gallaryModal .owl-carousel .owl-nav {
+    text-align: center;
+    margin-left: -232px;
+    font-size: 23px;
+}
+
+#gallaryModal .owl-carousel .owl-nav button {
+    margin-right : 5px;
+}
+
+#gallaryModal .owl-carousel .owl-nav.disabled {
+    display: block;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
+}
+
+.demo-footer > a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+}
+
+.modal-backdrop {
+    display: none;
+}
+
+.map-infobar-footer {
+    position: fixed;
+    float: left;
+    bottom: 0;
+    height: 80px;
+    width: 320px;
+    background-color: #68682b;
+    color: white;
+    text-align: center;
+}
+
+.map-search-bar {
+    border-radius: 1.5rem;
+    height: 50px;
+    -webkit-user-select: text; /* Chrome, Opera, Safari */
+    -moz-user-select: text; /* Firefox 2+ */
+    -ms-user-select: text; /* IE 10+ */
+    user-select: text; /* Standard syntax */
+}
+.map-infobar-footer a,.map-infobar-footer a:hover{
+    color: white;
+}
+
+.tab-content .tab-pane .title {
+    margin-top: 15px;
+}
+
+/* Contact Form Modal */
+.btn-deepgreen {
+    background-color: #797944;
+}
+
+.contact-modal {
+    margin-top : 150px;
+    color : #aab0b2;
+}
+
+.contact-modal .modal-content {
+    border-radius: 10px;
+}
+
+.contact-modal .modal-header {
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px 30px;
+    border-bottom : none;
+}
+
+.contact-modal .modal-header h2 {
+    margin-top: 5px;
+    letter-spacing: 11px;
+    color: #352c2c;
+    text-transform: UPPERCASE;
+}
+
+.contact-modal .modal-footer {
+    text-align : center;
+    border-top: none;
+}
+
+.contact-modal .modal-footer button {
+    padding: 12px 40px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.contact-modal .modal-body .form {
+    padding : 0px 25px;
+}
+
+.contact-modal .modal-body .form-control {
+    border: 0px;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 0px;
+    padding: 22px;
+}
+
+.contact-modal .modal-body ::placeholder {
+    color: black;
+    font-size : 14px;
+    opacity: 1; /* Firefox */
+}
+.ekko-lightbox.modal {
+    background: rgba(33, 33, 33, 0.5);
+}
+.ekko-lightbox.show {
+    display: flex !important;
+}
+.ekko-lightbox .modal-body {
+    padding: 0px;
+}
+
+.ekko-lightbox-nav-overlay a span{
+    color: white;
+}
+.ekko-lightbox-container>div.ekko-lightbox-item img {
+    height: 100%;
+}
+
+@media only screen and (min-width : 769px) {
+    #gallaryModalLoaderBtn {
+        display: block;
+    }
+
+    #galleryBtnForMobile {
+        display: none;
+    }
+
+    #gallery {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width : 768px) { 
+    #gallaryModal {
+        display: none !important;
+    }
+    #gallaryModalLoaderBtn {
+        display: none !important;
+    }
+
+    #galleryBtnForMobile {
+        display: block;
+    }
+
+    #gallery a img {
+        width: 130px;
+        height: 130px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+}
